@@ -6,8 +6,7 @@ float ipk;
 boolean penerima_bl;
 int gaji_ortu;
 
-Rincian Langkah
-    
+Rincian Langkah    
     print("Masukkan ipk");
     print("Apakah mahasiswa ini menerima beasiswa lain");
     print("Masukkan Gaji Ortu");
