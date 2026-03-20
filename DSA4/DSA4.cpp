@@ -6,11 +6,6 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
-/*
- * Logika Strategis:
- * Menggunakan unordered_map sebagai "brankas" untuk menyimpan
- * harga yang sudah dilihat beserta posisinya (1-based index).
- */
 vector<int> icecreamParlor(int m, vector<int> arr) {
     unordered_map<int, int> hash_table;
     vector<int> result;
@@ -19,14 +14,14 @@ vector<int> icecreamParlor(int m, vector<int> arr) {
         int current_price = arr[i];
         int complement = m - current_price;
 
-        // Cek apakah 'sisa uang' sudah ada di brankas
+
         if (hash_table.find(complement) != hash_table.end()) {
             result.push_back(hash_table[complement]); 
             result.push_back(i + 1); 
             return result; 
         }
 
-        // Simpan harga es krim saat ini dan posisinya
+
         hash_table[current_price] = i + 1;
     }
 
@@ -35,7 +30,7 @@ vector<int> icecreamParlor(int m, vector<int> arr) {
 
 int main()
 {
-    // Mengambil path output dari environment variable
+
     ofstream fout(getenv("OUTPUT_PATH"));
 
     string t_temp;
@@ -77,7 +72,7 @@ int main()
     return 0;
 }
 
-// Menggunakan lambda agar kompatibel dengan C++ modern dan menghilangkan warning ptr_fun
+
 string ltrim(const string &str) {
     string s(str);
     s.erase(
